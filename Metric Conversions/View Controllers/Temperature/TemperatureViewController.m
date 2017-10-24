@@ -18,7 +18,7 @@
 
 @implementation TemperatureViewController
 
-float k;
+float t;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,10 +44,10 @@ float k;
         _temperatureLabel.text = @"Fahrenheit to Celsius\n 1 Fahrenheit = (Celsius x 1.8) + 32";
         NSString *str = [_temperatureInputText text];
         float n = [str floatValue];
-        float k;
-        k = (n * 1.8) + 32;
-        _outputLabel.text = [NSString stringWithFormat:@"%f", k];
-        NSString *str1 = [NSString stringWithFormat:@"%f Fahrenheit = %f Celsius",n, k];
+        float t;
+        t = (n * 1.8) + 32;
+        _outputLabel.text = [NSString stringWithFormat:@"%f", t];
+        NSString *str1 = [NSString stringWithFormat:@"%f Fahrenheit = %f Celsius",n, t];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSMutableArray *_recents = [[defaults objectForKey:@"temperature"] mutableCopy];
         if(_recents.count==0){
@@ -61,10 +61,10 @@ float k;
         _temperatureLabel.text = @"Celsius to Fahrenheit\n 1 Celsius = (Fahrenheit - 32)*0.5555";
         NSString *str = [_temperatureInputText text];
         float n = [str floatValue];
-        float k;
-        k = (n - 32) * 0.5555;
-        _outputLabel.text = [NSString stringWithFormat:@"%f", k];
-        NSString *str1 = [NSString stringWithFormat:@"%f Celsius = %f Fahrenheit",n, k];
+        float t;
+        t = (n - 32) * 0.5555;
+        _outputLabel.text = [NSString stringWithFormat:@"%f", t];
+        NSString *str1 = [NSString stringWithFormat:@"%f Celsius = %f Fahrenheit",n, t];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSMutableArray *_recents = [[defaults objectForKey:@"temperature"] mutableCopy];
         if(_recents.count==0){

@@ -18,7 +18,7 @@
 
 @implementation MassViewController
 
-float k;
+float m;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -52,10 +52,10 @@ float k;
         _massLabel.text = @"Kilograms To Pounds\n 1 Kg = 2.20462 Pounds";
         NSString *str = [_massInputText text];
         float n = [str floatValue];
-        float k;
-        k = n * 2.20462;
-        _outputLabel.text = [NSString stringWithFormat:@"%f", k];
-        NSString *str1 = [NSString stringWithFormat:@"%f Kg = %f Pounds",n, k];
+        float m;
+        m = n * 2.20462;
+        _outputLabel.text = [NSString stringWithFormat:@"%f", m];
+        NSString *str1 = [NSString stringWithFormat:@"%f Kg = %f Pounds",n, m];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSMutableArray *_recents = [[defaults objectForKey:@"mass"] mutableCopy];
         if(_recents.count==0){
@@ -69,10 +69,10 @@ float k;
         _massLabel.text = @"Pounds To Kilograms\n 1 Pound = 0.453592 Kgs";
         NSString *str = [_massInputText text];
         float n = [str floatValue];
-        float k;
-        k = n * 0.453592;
-        _outputLabel.text = [NSString stringWithFormat:@"%f", k];
-        NSString *str1 = [NSString stringWithFormat:@"%f Pound = %f Kgs",n, k];
+        float m;
+        m = n * 0.453592;
+        _outputLabel.text = [NSString stringWithFormat:@"%f", m];
+        NSString *str1 = [NSString stringWithFormat:@"%f Pound = %f Kgs",n, m];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSMutableArray *_recents = [[defaults objectForKey:@"mass"] mutableCopy];
         if(_recents.count==0){
@@ -86,10 +86,10 @@ float k;
         _massLabel.text = @"Ounce To Grams\n 1 Ounce = 28.3495 Grams";
         NSString *str = [_massInputText text];
         float n = [str floatValue];
-        float k;
-        k = n * 28.3495;
-        _outputLabel.text = [NSString stringWithFormat:@"%f", k];
-        NSString *str1 = [NSString stringWithFormat:@"%f Ounce = %f Grams",n, k];
+        float m;
+        m = n * 28.3495;
+        _outputLabel.text = [NSString stringWithFormat:@"%f", m];
+        NSString *str1 = [NSString stringWithFormat:@"%f Ounce = %f Grams",n, m];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSMutableArray *_recents = [[defaults objectForKey:@"mass"] mutableCopy];
         if(_recents.count==0){
@@ -103,10 +103,10 @@ float k;
         _massLabel.text = @"Grams To Ounce\n 1 Gram = 0.035274 Ounces";
         NSString *str = [_massInputText text];
         float n = [str floatValue];
-        float k;
-        k = n * 0.035274;
-        _outputLabel.text = [NSString stringWithFormat:@"%f", k];
-        NSString *str1 = [NSString stringWithFormat:@"%f Gram = %f Ounces",n, k];
+        float m;
+        m = n * 0.035274;
+        _outputLabel.text = [NSString stringWithFormat:@"%f", m];
+        NSString *str1 = [NSString stringWithFormat:@"%f Gram = %f Ounces",n, m];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSMutableArray *_recents = [[defaults objectForKey:@"mass"] mutableCopy];
         if(_recents.count==0){

@@ -18,7 +18,7 @@
 
 @implementation LiquidViewController
 
-float k;
+float x;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -60,10 +60,10 @@ float k;
         _liquidLabel.text = @"Litres To Gallons\n 1 Liter = 0.264172 Gallons";
         NSString *str = [_liquidInputText text];
         float n = [str floatValue];
-        float k;
-        k = n * 0.264172;
-        _outputLabel.text = [NSString stringWithFormat:@"%f", k];
-        NSString *str1 = [NSString stringWithFormat:@"%f Liter = %f Gallons",n, k];
+        float x;
+        x = n * 0.264172;
+        _outputLabel.text = [NSString stringWithFormat:@"%f", x];
+        NSString *str1 = [NSString stringWithFormat:@"%f Liter = %f Gallons",n, x];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSMutableArray *_recents = [[defaults objectForKey:@"liquid"] mutableCopy];
         if(_recents.count==0){
@@ -77,10 +77,10 @@ float k;
         _liquidLabel.text = @"Gallons To Litres\n 1 Gallon = 3.78541 Liters";
         NSString *str = [_liquidInputText text];
         float n = [str floatValue];
-        float k;
-        k = n * 3.78541;
-        _outputLabel.text = [NSString stringWithFormat:@"%f", k];
-        NSString *str1 = [NSString stringWithFormat:@"%f Gallon = %f Liters",n, k];
+        float x;
+        x = n * 3.78541;
+        _outputLabel.text = [NSString stringWithFormat:@"%f", x];
+        NSString *str1 = [NSString stringWithFormat:@"%f Gallon = %f Liters",n, x];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSMutableArray *_recents = [[defaults objectForKey:@"liquid"] mutableCopy];
         if(_recents.count==0){
@@ -94,10 +94,10 @@ float k;
         _liquidLabel.text = @"Pints To Gallons\n 1 Pint = 0.125 Gallons";
         NSString *str = [_liquidInputText text];
         float n = [str floatValue];
-        float k;
-        k = n * 0.125;
-        _outputLabel.text = [NSString stringWithFormat:@"%f", k];
-        NSString *str1 = [NSString stringWithFormat:@"%f Pint = %f Gallons",n, k];
+        float x;
+        x = n * 0.125;
+        _outputLabel.text = [NSString stringWithFormat:@"%f", x];
+        NSString *str1 = [NSString stringWithFormat:@"%f Pint = %f Gallons",n, x];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSMutableArray *_recents = [[defaults objectForKey:@"liquid"] mutableCopy];
         if(_recents.count==0){
@@ -111,10 +111,10 @@ float k;
         _liquidLabel.text = @"Gallons To Pints\n 1 Gallon = 9.60762 Pints";
         NSString *str = [_liquidInputText text];
         float n = [str floatValue];
-        float k;
-        k = n * 9.60762;
-        _outputLabel.text = [NSString stringWithFormat:@"%f", k];
-        NSString *str1 = [NSString stringWithFormat:@"%f Gallon = %f Pints",n, k];
+        float x;
+        x = n * 9.60762;
+        _outputLabel.text = [NSString stringWithFormat:@"%f", x];
+        NSString *str1 = [NSString stringWithFormat:@"%f Gallon = %f Pints",n, x];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSMutableArray *_recents = [[defaults objectForKey:@"liquid"] mutableCopy];
         if(_recents.count==0){
@@ -128,10 +128,10 @@ float k;
         _liquidLabel.text = @"Quarts To Gallons\n 1 Quart = 0.20817 Gal";
         NSString *str = [_liquidInputText text];
         float n = [str floatValue];
-        float k;
-        k = n * 0.20817;
-        _outputLabel.text = [NSString stringWithFormat:@"%f", k];
-        NSString *str1 = [NSString stringWithFormat:@"%f Quart = %f Gal",n, k];
+        float x;
+        x = n * 0.20817;
+        _outputLabel.text = [NSString stringWithFormat:@"%f", x];
+        NSString *str1 = [NSString stringWithFormat:@"%f Quart = %f Gal",n, x];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSMutableArray *_recents = [[defaults objectForKey:@"liquid"] mutableCopy];
         if(_recents.count==0){
@@ -145,10 +145,10 @@ float k;
         _liquidLabel.text = @"Gallons To Quarts\n 1 Gallons = 4.80381 Quarts";
         NSString *str = [_liquidInputText text];
         float n = [str floatValue];
-        float k;
-        k = n * 4.80381;
-        _outputLabel.text = [NSString stringWithFormat:@"%f", k];
-        NSString *str1 = [NSString stringWithFormat:@"%f Gallons = %f Quarts",n, k];
+        float x;
+        x = n * 4.80381;
+        _outputLabel.text = [NSString stringWithFormat:@"%f", x];
+        NSString *str1 = [NSString stringWithFormat:@"%f Gallons = %f Quarts",n, x];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSMutableArray *_recents = [[defaults objectForKey:@"liquid"] mutableCopy];
         if(_recents.count==0){
