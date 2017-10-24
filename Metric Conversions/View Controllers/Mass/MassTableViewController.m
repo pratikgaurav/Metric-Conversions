@@ -95,7 +95,7 @@
     selectedCell = [array objectAtIndex:indexPath.row];
     if(dictionary == _firstDict2)
     {
-        [self performSegueWithIdentifier:@"mass2massvc" sender:self];
+        //[self performSegueWithIdentifier:@"mass2massvc" sender:self];
     }
 }
 

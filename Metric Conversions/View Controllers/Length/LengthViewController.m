@@ -141,7 +141,6 @@ float k;
     else if (_temp == 5)
     {
         _lengthLabel.text = @"Centimeters to Inches\n 1 Centimeter = 0.3937 Inches";
-        _lengthLabel.text = @"Inches to Centimeters\n 1 Inch = 2.54 Centimeters";
         NSString *str = [_lengthInputText text];
         float n = [str floatValue];
         float k;
@@ -156,5 +155,12 @@ float k;
         [_recents addObject:str1];
         [defaults setObject:_recents forKey:@"length"];
     }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    if (theTextField == _lengthInputText) {
+        [_lengthInputText resignFirstResponder];
+    }
+    return YES;
 }
 @end

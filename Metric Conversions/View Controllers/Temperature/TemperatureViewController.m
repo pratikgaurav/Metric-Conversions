@@ -29,7 +29,7 @@ float t;
     }
     else if (_temp == 1)
     {
-        _temperatureLabel.text = @"Celsius to Fahrenheit\n 1 Celsius = (Fahrenheit - 32)*0.5555";
+        _temperatureLabel.text = @"Celsius to Fahrenheit\n 1 Celsius = (Fahrenheit - 32) * 0.5555";
     }
 }
 
@@ -58,7 +58,7 @@ float t;
     }
     else if (_temp == 1)
     {
-        _temperatureLabel.text = @"Celsius to Fahrenheit\n 1 Celsius = (Fahrenheit - 32)*0.5555";
+        _temperatureLabel.text = @"Celsius to Fahrenheit\n 1 Celsius = (Fahrenheit - 32) * 0.5555";
         NSString *str = [_temperatureInputText text];
         float n = [str floatValue];
         float t;
@@ -74,4 +74,11 @@ float t;
         [defaults setObject:_recents forKey:@"temperature"];
     }
 }
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    if (theTextField == _temperatureInputText) {
+        [_temperatureInputText resignFirstResponder];
+    }
+    return YES;
+}
+
 @end

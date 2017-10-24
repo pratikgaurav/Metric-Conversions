@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _finalArray3 = [[NSMutableArray alloc] init];
-    _dataArray3 = [[NSMutableArray alloc] initWithObjects:@"Kilograms To Pounds", @"Pounds To Kilograms", @"Ounce To Grams", @"Grams To Ounce", nil];
+    _dataArray3 = [[NSMutableArray alloc] initWithObjects:@"Fahrenheit to Celsius", @"Celsius to Fahrenheit", nil];
     _firstDict3 = [NSDictionary dictionaryWithObject:_dataArray3 forKey:@"data"];
     [_finalArray3 addObject:_firstDict3];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -95,7 +95,7 @@
     selectedCell = [array objectAtIndex:indexPath.row];
     if(dictionary == _firstDict3)
     {
-        [self performSegueWithIdentifier:@"temperature2temperaturevc" sender:self];
+        //[self performSegueWithIdentifier:@"temperature2temperaturevc" sender:self];
     }
 }
 

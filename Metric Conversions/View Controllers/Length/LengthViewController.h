@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LengthViewController : UIViewController
+@interface LengthViewController : UIViewController <UITextFieldDelegate>
     @property NSInteger temp;
 @end

@@ -29,15 +29,15 @@ float m;
     }
     else if (_temp == 1)
     {
-        _massLabel.text = @"Pounds To Kilograms\n 1 Lb = 0.453592 Kgs";
+        _massLabel.text = @"Pounds To Kilograms\n 1 Pound = 0.453592 Kgs";
     }
     else if (_temp == 2)
     {
-        _massLabel.text = @"Ounce To Grams\n 1 Oz = 28.3495 G";
+        _massLabel.text = @"Ounce To Grams\n 1 Ounce = 28.3495 Grams";
     }
     else if (_temp == 3)
     {
-        _massLabel.text = @"Grams To Ounce\n 1 G = 0.035274 Oz";
+        _massLabel.text = @"Grams To Ounce\n 1 Gram = 0.035274 Ounces";
     }
 }
 
@@ -116,4 +116,11 @@ float m;
         [defaults setObject:_recents forKey:@"mass"];
     }
 }
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    if (theTextField == _massInputText) {
+        [_massInputText resignFirstResponder];
+    }
+    return YES;
+}
+
 @end

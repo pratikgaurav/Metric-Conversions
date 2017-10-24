@@ -25,27 +25,27 @@ float x;
     // Do any additional setup after loading the view.
     if (_temp == 0)
     {
-        _liquidLabel.text = @"Litres To Gallons\n 1 Lit = 0.264172 Gal";
+        _liquidLabel.text = @"Litres To Gallons\n 1 Liter = 0.264172 Gallons";
     }
     else if (_temp == 1)
     {
-        _liquidLabel.text = @"Gallons To Litres\n 1 Gal = 3.78541 Lit";
+        _liquidLabel.text = @"Gallons To Litres\n 1 Gallon = 3.78541 Liters";
     }
     else if (_temp == 2)
     {
-        _liquidLabel.text = @"Pints To Gallons\n 1 Pint = 0.125 Gal";
+        _liquidLabel.text = @"Pints To Gallons\n 1 Pint = 0.125 Gallons";
     }
     else if (_temp == 3)
     {
-        _liquidLabel.text = @"Gallons To Pints\n 1 Gal = 9.60762 Pints";
+        _liquidLabel.text = @"Gallons To Pints\n 1 Gallon = 9.60762 Pints";
     }
     else if (_temp == 4)
     {
-        _liquidLabel.text = @"Quarts To Gallons\n 1 Quart = 0.20817 Gal";
+        _liquidLabel.text = @"Quarts To Gallons\n 1 Quart = 0.20817 Gallons";
     }
     else if (_temp == 5)
     {
-        _liquidLabel.text = @"Gallons To Quarts\n 1 Gal = 4.80381 Quarts";
+        _liquidLabel.text = @"Gallons To Quarts\n 1 Gallon = 4.80381 Quarts";
     }
 }
 
@@ -158,4 +158,11 @@ float x;
         [defaults setObject:_recents forKey:@"liquid"];
     }
 }
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    if (theTextField == _liquidInputText) {
+        [_liquidInputText resignFirstResponder];
+    }
+    return YES;
+}
+
 @end

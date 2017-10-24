@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TemperatureViewController : UIViewController
+@interface TemperatureViewController : UIViewController <UITextFieldDelegate>
     @property NSInteger temp;
 @end

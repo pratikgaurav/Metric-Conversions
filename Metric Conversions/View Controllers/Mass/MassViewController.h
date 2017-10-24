@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MassViewController : UIViewController
+@interface MassViewController : UIViewController <UITextFieldDelegate>
     @property NSInteger temp;
 @end

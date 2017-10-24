@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LiquidViewController : UIViewController
+@interface LiquidViewController : UIViewController <UITextFieldDelegate>
     @property NSInteger temp;
 @end
