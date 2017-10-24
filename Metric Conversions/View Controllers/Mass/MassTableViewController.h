@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface MassTableViewController : UITableViewController
-
+{
+    NSMutableArray* _dataArray;
+    NSArray* _resultArray;
+    NSDictionary *_firstDict;
+    NSMutableArray *_finalArray;
+}
 @end

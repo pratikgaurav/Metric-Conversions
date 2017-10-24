@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface LengthViewController : UIViewController
-
+    @property NSInteger temp;
 @end

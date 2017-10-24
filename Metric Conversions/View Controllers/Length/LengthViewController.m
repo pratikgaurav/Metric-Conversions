@@ -9,14 +9,42 @@
 #import "LengthViewController.h"
 
 @interface LengthViewController ()
-
+    @property (weak, nonatomic) IBOutlet UILabel *lengthLabel;
+    @property (weak, nonatomic) IBOutlet UITextField *lengthInputText;
+    @property (weak, nonatomic) IBOutlet UILabel *OutputLabel;
+    - (IBAction)lengthAction:(id)sender;
 @end
 
 @implementation LengthViewController
 
+float k;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    if (_temp == 0)
+    {
+        _lengthLabel.text = @"Kilometers to Miles\n 1 Km = 0.621371 Miles";
+    }
+    else if (_temp == 1)
+    {
+        _lengthLabel.text = @"Miles to Kilometers\n 1 Mile = 1.60934 Kilometers";
+    }
+    else if (_temp == 2)
+    {
+        _lengthLabel.text = @"Yard to Feet\n 1 Yard = 3 Feet";
+    }
+    else if (_temp == 3)
+    {
+        _lengthLabel.text = @"Feet to Yard\n 1 Feet = 0.33333 Yards";
+    }
+    else if (_temp == 4)
+    {
+        _lengthLabel.text = @"Inches to Centimeters\n 1 Inch = 2.54 Centimeters";
+    }
+    else if (_temp == 5)
+    {
+        _lengthLabel.text = @"Centimeters to Inches\n 1 Centimeter = 0.3937 Inches";
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +52,43 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)lengthAction:(id)sender {
+    if (_temp == 0)
+    {
+        _lengthLabel.text = @"Kilometers to Miles\n 1 Km = 0.621371 Miles";
+        NSString *str = [_lengthInputText text];
+        float n = [str floatValue];
+        float k;
+        k = n * 0.621371;
+        _OutputLabel.text = [NSString stringWithFormat:@"%f", k];
+        NSString *str1 = [NSString stringWithFormat:@"%f Km = %f Miles",n, k];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSMutableArray *_recents = [[defaults objectForKey:@"length"] mutableCopy];
+        if(_recents.count==0){
+            _recents = [[NSMutableArray alloc] init];
+        }
+        [_recents addObject:str1];
+        [defaults setObject:_recents forKey:@"length"];
+    }
+    else if (_temp == 1)
+    {
+        _lengthLabel.text = @"Miles to Kilometers\n 1 Mile = 1.60934 Kilometers";
+    }
+    else if (_temp == 2)
+    {
+        _lengthLabel.text = @"Yard to Feet\n 1 Yard = 3 Feet";
+    }
+    else if (_temp == 3)
+    {
+        _lengthLabel.text = @"Feet to Yard\n 1 Feet = 0.33333 Yards";
+    }
+    else if (_temp == 4)
+    {
+        _lengthLabel.text = @"Inches to Centimeters\n 1 Inch = 2.54 Centimeters";
+    }
+    else if (_temp == 5)
+    {
+        _lengthLabel.text = @"Centimeters to Inches\n 1 Centimeter = 0.3937 Inches";
+    }
 }
-*/
-
 @end

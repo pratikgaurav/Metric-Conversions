@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface TemperatureTableViewController : UITableViewController
-
+{
+    NSMutableArray* _dataArray;
+    NSArray* _resultArray;
+    NSDictionary *_firstDict;
+    NSMutableArray *_finalArray;
+}
 @end
