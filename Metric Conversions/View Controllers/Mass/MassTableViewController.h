@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MassTableViewController.h
 //  Metric Conversions
 //
 //  Created by Kamireddi, Gaurav Venkata Satya Pratik on 10/23/17.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MassTableViewController : UITableViewController
 
 @end
-
