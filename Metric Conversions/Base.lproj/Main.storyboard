@@ -100,7 +100,6 @@
                     </view>
                     <connections>
                         <outlet property="OutputLabel" destination="1eb-ic-qjH" id="027-70-BtZ"/>
-                        <outlet property="lengthInput" destination="zVY-qs-CKi" id="Dbs-YG-7zD"/>
                         <outlet property="lengthInputText" destination="zVY-qs-CKi" id="xUf-xC-z0n"/>
                         <outlet property="lengthLabel" destination="iTZ-ah-k1v" id="IOY-kf-n6z"/>
                     </connections>
@@ -118,7 +117,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="IEw-T7-LEG">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="IEw-T7-LEG">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IEw-T7-LEG" id="omG-DT-Cbh">
@@ -126,7 +125,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Gr2-3A-USE" kind="show" id="7aF-gO-ctA"/>
+                                    <segue destination="Gr2-3A-USE" kind="show" identifier="liquid2liquidvc" id="7aF-gO-ctA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -148,9 +147,41 @@
                     <view key="view" contentMode="scaleToFill" id="lVY-qw-kZv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jD-Ac-ZkN">
+                                <rect key="frame" x="72" y="171" width="230" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Output" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7Z-Wc-loJ">
+                                <rect key="frame" x="72" y="465" width="230" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tLz-kk-QVc">
+                                <rect key="frame" x="72" y="314" width="230" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="liquidAction:" destination="Gr2-3A-USE" eventType="editingChanged" id="xPG-Tb-BDE"/>
+                                    <outlet property="delegate" destination="Gr2-3A-USE" id="bay-qZ-OqQ"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="NlV-ib-AMO"/>
                     </view>
+                    <connections>
+                        <outlet property="liquidInputText" destination="tLz-kk-QVc" id="vZg-OU-WUD"/>
+                        <outlet property="liquidLabel" destination="7jD-Ac-ZkN" id="IkS-kK-mw2"/>
+                        <outlet property="outputLabel" destination="x7Z-Wc-loJ" id="Ts3-49-zke"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nWM-QD-X56" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -165,7 +196,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lfa-M0-6TX">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="lfa-M0-6TX">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lfa-M0-6TX" id="vTl-XO-aNX">
@@ -173,7 +204,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Tql-SI-OXC" kind="show" id="l6Z-bz-qpb"/>
+                                    <segue destination="Tql-SI-OXC" kind="show" identifier="mass2massvc" id="l6Z-bz-qpb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -195,9 +226,41 @@
                     <view key="view" contentMode="scaleToFill" id="xFx-Qy-xME">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67D-6k-u0k">
+                                <rect key="frame" x="72" y="171" width="230" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Output" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trl-Wm-cCU">
+                                <rect key="frame" x="72" y="465" width="230" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aD3-nJ-nhF">
+                                <rect key="frame" x="72" y="314" width="230" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="massAction:" destination="Tql-SI-OXC" eventType="editingChanged" id="fLE-bj-pqG"/>
+                                    <outlet property="delegate" destination="Tql-SI-OXC" id="T0p-5v-XGA"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="AQn-DI-21N"/>
                     </view>
+                    <connections>
+                        <outlet property="massInputText" destination="aD3-nJ-nhF" id="gtQ-Af-jxl"/>
+                        <outlet property="massLabel" destination="67D-6k-u0k" id="YrX-8T-yGr"/>
+                        <outlet property="outputLabel" destination="Trl-Wm-cCU" id="jwm-Qh-Xjf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Wx-zp-SZ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -212,7 +275,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9t8-kD-jzC">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="9t8-kD-jzC">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9t8-kD-jzC" id="sVz-Ar-AFm">
@@ -220,7 +283,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="amt-Ro-ABQ" kind="show" id="GYa-Pl-QLj"/>
+                                    <segue destination="amt-Ro-ABQ" kind="show" identifier="temperature2temperaturevc" id="GYa-Pl-QLj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -242,9 +305,41 @@
                     <view key="view" contentMode="scaleToFill" id="8R7-9Q-lKG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qV4-ex-sMy">
+                                <rect key="frame" x="72" y="171" width="230" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Output" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVh-wH-twk">
+                                <rect key="frame" x="72" y="465" width="230" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AfX-Si-lU5">
+                                <rect key="frame" x="72" y="314" width="230" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="temperatureAction:" destination="amt-Ro-ABQ" eventType="editingChanged" id="rlO-wv-L5C"/>
+                                    <outlet property="delegate" destination="amt-Ro-ABQ" id="O7V-Sr-0GI"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="TRi-OA-DWj"/>
                     </view>
+                    <connections>
+                        <outlet property="outputLabel" destination="nVh-wH-twk" id="s9G-UE-R6G"/>
+                        <outlet property="temperatureInputText" destination="AfX-Si-lU5" id="CdX-F1-IPd"/>
+                        <outlet property="temperatureLabel" destination="qV4-ex-sMy" id="Phc-EW-XHl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zRK-Jr-kk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

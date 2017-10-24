@@ -10,9 +10,9 @@
 
 @interface MassTableViewController : UITableViewController
 {
-    NSMutableArray* _dataArray;
-    NSArray* _resultArray;
-    NSDictionary *_firstDict;
-    NSMutableArray *_finalArray;
+    NSMutableArray* _dataArray2;
+    NSArray* _resultArray2;
+    NSDictionary *_firstDict2;
+    NSMutableArray *_finalArray2;
 }
 @end

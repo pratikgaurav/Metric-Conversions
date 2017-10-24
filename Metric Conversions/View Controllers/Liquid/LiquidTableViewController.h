@@ -10,9 +10,9 @@
 
 @interface LiquidTableViewController : UITableViewController
 {
-    NSMutableArray* _dataArray;
-    NSArray* _resultArray;
-    NSDictionary *_firstDict;
-    NSMutableArray *_finalArray;
+    NSMutableArray* _dataArray1;
+    NSArray* _resultArray1;
+    NSDictionary *_firstDict1;
+    NSMutableArray *_finalArray1;
 }
 @end

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MassViewController : UIViewController
-
+    @property NSInteger temp;
 @end

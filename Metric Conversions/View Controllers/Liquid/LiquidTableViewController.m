@@ -7,92 +7,104 @@
 //
 
 #import "LiquidTableViewController.h"
+#import "LiquidViewController.h"
 
 @interface LiquidTableViewController ()
-
+{
+    NSString *selectedCell;
+}
 @end
 
 @implementation LiquidTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _finalArray1 = [[NSMutableArray alloc] init];
+    _dataArray1 = [[NSMutableArray alloc] initWithObjects:@"Litres To Gallons", @"Gallons To Litres", @"Pints To Gallons", @"Gallons To Pints", @"Quarts To Gallons", @"Gallons To Quarts", nil];
+    _firstDict1 = [NSDictionary dictionaryWithObject:_dataArray1 forKey:@"data"];
+    [_finalArray1 addObject:_firstDict1];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [NSUserDefaults standardUserDefaults];
+    NSMutableArray *_recents = [defaults objectForKey:@"liquid"];
+    _recents = [[[_recents reverseObjectEnumerator] allObjects ] mutableCopy];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    if(_recents.count==0)
+    {
+        _resultArray1 = [[NSArray alloc] init];
+    }
+    else if(_recents.count>5){
+        _resultArray1 = [_recents subarrayWithRange:NSMakeRange(0,5)];
+    }
+    else{
+        _resultArray1 = [_recents mutableCopy];
+    }
+    NSDictionary *_secondDict = [NSDictionary dictionaryWithObject:_resultArray1 forKey:@"data"];
+    [_finalArray1 addObject:_secondDict];
+    NSLog(@"final array %@",_finalArray1);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+- (void) viewDidAppear:(BOOL)animated{
+    [self viewDidLoad];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    NSDictionary *dict = [_finalArray1 objectAtIndex:section];
+    NSMutableArray *arr = [dict objectForKey:@"data"];
+    return [arr count];
 }
 
-/*
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if(section == 0)
+        return @"Conversions";
+    else
+        return @"Recents";
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+    NSDictionary *dictionary = [_finalArray1 objectAtIndex:indexPath.section];
+    NSArray *array = [dictionary objectForKey:@"data"];
+    NSString *cellValue = [array objectAtIndex:indexPath.row];
+    cell.textLabel.text = cellValue;
+    if(dictionary == _firstDict1)
+    {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)tableView:(UITableView * )tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *dictionary = [_finalArray1 objectAtIndex:indexPath.section];
+    NSArray *array = [dictionary objectForKey:@"data"];
+    selectedCell = [array objectAtIndex:indexPath.row];
+    if(dictionary == _firstDict1)
+    {
+        [self performSegueWithIdentifier:@"liquid2liquidvc" sender:self];
+    }
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+    LiquidViewController *vc1 = [segue destinationViewController];
+    vc1.temp = path.row;
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

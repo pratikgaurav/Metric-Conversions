@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TemperatureViewController : UIViewController
-
+    @property NSInteger temp;
 @end

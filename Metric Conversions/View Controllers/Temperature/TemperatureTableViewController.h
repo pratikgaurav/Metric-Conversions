@@ -10,9 +10,9 @@
 
 @interface TemperatureTableViewController : UITableViewController
 {
-    NSMutableArray* _dataArray;
-    NSArray* _resultArray;
-    NSDictionary *_firstDict;
-    NSMutableArray *_finalArray;
+    NSMutableArray* _dataArray3;
+    NSArray* _resultArray3;
+    NSDictionary *_firstDict3;
+    NSMutableArray *_finalArray3;
 }
 @end

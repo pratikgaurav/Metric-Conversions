@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface LiquidViewController : UIViewController
-
+    @property NSInteger temp;
 @end
