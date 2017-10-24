@@ -20,6 +20,7 @@
 float k;
 
 - (void)viewDidLoad {
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"a.jpg"]]];
     [super viewDidLoad];
     if (_temp == 0)
     {

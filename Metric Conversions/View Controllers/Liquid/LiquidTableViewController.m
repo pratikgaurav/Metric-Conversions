@@ -18,6 +18,7 @@
 @implementation LiquidTableViewController
 
 - (void)viewDidLoad {
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"a.jpg"]]];
     [super viewDidLoad];
     _finalArray1 = [[NSMutableArray alloc] init];
     _dataArray1 = [[NSMutableArray alloc] initWithObjects:@"Litres To Gallons", @"Gallons To Litres", @"Pints To Gallons", @"Gallons To Pints", @"Quarts To Gallons", @"Gallons To Quarts", nil];

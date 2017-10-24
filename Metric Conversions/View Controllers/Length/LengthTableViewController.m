@@ -18,6 +18,7 @@
 @implementation LengthTableViewController
 
 - (void)viewDidLoad {
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"a.jpg"]]];
     [super viewDidLoad];
     _finalArray = [[NSMutableArray alloc] init];
     _dataArray = [[NSMutableArray alloc] initWithObjects:@"Kilometers to Miles", @"Miles to Kilometers", @"Yard to Feet", @"Feet to Yard", @"Inches to Centimeters", @"Centimeters to Inches", nil];

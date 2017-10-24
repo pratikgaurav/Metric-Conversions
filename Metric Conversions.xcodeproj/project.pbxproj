@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3CC5B2B41F9FDE1E005B7396 /* a.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CC5B2B31F9FDE1E005B7396 /* a.jpg */; };
 		3CC8FD891F9EDEEE00BB8A1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC8FD881F9EDEEE00BB8A1B /* AppDelegate.m */; };
 		3CC8FD8F1F9EDEEE00BB8A1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CC8FD8D1F9EDEEE00BB8A1B /* Main.storyboard */; };
 		3CC8FD911F9EDEEE00BB8A1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CC8FD901F9EDEEE00BB8A1B /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3CC5B2B31F9FDE1E005B7396 /* a.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = a.jpg; path = ../../../../Downloads/a.jpg; sourceTree = "<group>"; };
 		3CC8FD841F9EDEEE00BB8A1B /* Metric Conversions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Metric Conversions.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CC8FD871F9EDEEE00BB8A1B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3CC8FD881F9EDEEE00BB8A1B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 		3CC8FDBC1F9EDFA300BB8A1B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3CC5B2B31F9FDE1E005B7396 /* a.jpg */,
 				3CC8FDBF1F9EDFF700BB8A1B /* length.png */,
 				3CC8FDBD1F9EDFF700BB8A1B /* liquid.png */,
 				3CC8FDBE1F9EDFF700BB8A1B /* mass.png */,
@@ -346,6 +349,7 @@
 				3CC8FDC11F9EDFF800BB8A1B /* liquid.png in Resources */,
 				3CC8FDC31F9EDFF800BB8A1B /* length.png in Resources */,
 				3CC8FD911F9EDEEE00BB8A1B /* Assets.xcassets in Resources */,
+				3CC5B2B41F9FDE1E005B7396 /* a.jpg in Resources */,
 				3CC8FD8F1F9EDEEE00BB8A1B /* Main.storyboard in Resources */,
 				3CC8FDC41F9EDFF800BB8A1B /* temperature.png in Resources */,
 			);

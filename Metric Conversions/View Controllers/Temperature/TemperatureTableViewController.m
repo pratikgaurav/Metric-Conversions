@@ -18,6 +18,7 @@
 @implementation TemperatureTableViewController
 
 - (void)viewDidLoad {
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"a.jpg"]]];
     [super viewDidLoad];
     _finalArray3 = [[NSMutableArray alloc] init];
     _dataArray3 = [[NSMutableArray alloc] initWithObjects:@"Fahrenheit to Celsius", @"Celsius to Fahrenheit", nil];

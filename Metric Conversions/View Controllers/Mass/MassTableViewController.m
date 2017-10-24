@@ -18,6 +18,7 @@
 @implementation MassTableViewController
 
 - (void)viewDidLoad {
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"a.jpg"]]];
     [super viewDidLoad];
     _finalArray2 = [[NSMutableArray alloc] init];
     _dataArray2 = [[NSMutableArray alloc] initWithObjects:@"Kilograms To Pounds", @"Pounds To Kilograms", @"Ounce To Grams", @"Grams To Ounce", nil];

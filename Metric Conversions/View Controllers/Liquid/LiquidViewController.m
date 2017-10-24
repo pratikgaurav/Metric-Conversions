@@ -21,6 +21,7 @@
 float x;
 
 - (void)viewDidLoad {
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"a.jpg"]]];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     if (_temp == 0)
